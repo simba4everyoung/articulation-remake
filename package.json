@@ -1,0 +1,32 @@
+{
+  "name": "articulation-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "*",
+    "cssnano": "*",
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-postcss": "*",
+    "grunt-sass": "*",
+    "grunt-svgstore": "*",
+    "grunt-tinypng": "*",
+    "grunt-uncss": "*",
+    "matchdep": "*"
+  },
+  "dependencies": {}
+}
