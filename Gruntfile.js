@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                 files: [
                     'index.html'
                 ],
-                tasks: []                
+                tasks: ['jshint', 'concat:myjs']                
             },
             css: {
                 files: [
@@ -108,7 +108,8 @@ module.exports = function(grunt) {
                     'bower_components/jquery/dist/jquery.min.js',
                     'bower_components/jquery-ui/jquery-ui.min.js',
                     'bower_components/angular/angular.js',
-                    'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js',
+                    'bower_components/angular-route/angular-route.js',
+                    'bower_components/bootstrap/js/modal.js',
                     'bower_components/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js'
                 ],
                 dest: 'js/vendor.js',

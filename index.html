@@ -8,14 +8,12 @@
     <title>Articulation Pathways Angular Remake</title>
   </head>
   <body ng-app="ArticulationApp">
-    <ul ng-controller="sidebarController">
-      <li ng-repeat="item in items">
-        <a href="#">{{item}}</a>
-      </li>
-    </ul>
-    <div class="content" ng-controller="outboundController">
-      
-    </div>
+    <side-nav></side-nav>
+    <div class="content" ng-view>
+
+<!--       <outbound ng-if='sideNav.currentView == "outbound"'></outbound>
+      <inbound ng-if='sideNav.currentView == "inbound"'></inbound>
+ -->    </div>
   <script src="//localhost:35729/livereload.js"></script>
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>

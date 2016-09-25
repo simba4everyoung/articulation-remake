@@ -1,6 +1,3 @@
-angular.module('ArticulationApp.controllers', []).
-
-/* Outbound Controller */
-controller('outboundController', function($scope) {
-  $scope.name = 'outbound';
+app.controller('outboundController', function() {
+  this.name = 'outbound';
 });
