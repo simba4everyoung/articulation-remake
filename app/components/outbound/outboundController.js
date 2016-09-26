@@ -1,3 +1,3 @@
 app.controller('outboundController', function() {
-  this.name = 'outbound';
+  this.title = 'Outbound Pathways';
 });

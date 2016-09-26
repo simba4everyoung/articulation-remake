@@ -30,10 +30,20 @@ app.filter('url', function() {
   };
 });
 app.controller('inboundController', function() {
-  this.name = 'inbound';
+  this.title = 'Inbound Pathways';
 });
 app.controller('outboundController', function() {
-  this.name = 'outbound';
+  this.title = 'Outbound Pathways';
+});
+app.controller('searchKeywordController', function(){
+  this.keyword = '';
+});
+app.directive('searchKeyword', function() {
+  return {
+    templateUrl: '/app/shared/search-keyword/searchKeyword.html',
+    controller: 'searchKeywordController',
+    controllerAs: 'searchKeyword'
+  };
 });
 app.controller('sideNavController', function() {
   this.items = ['Outbound Pathways', 'Inbound Pathways', 'Canada Map', 'Ontario Map'];

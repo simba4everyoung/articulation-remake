@@ -1,3 +1,3 @@
 app.controller('inboundController', function() {
-  this.name = 'inbound';
+  this.title = 'Inbound Pathways';
 });
