@@ -1,9 +1,9 @@
 <div class="search-container">
   <p>Please enter program keyword.</p>
-  <form action="#" method="post" class="search-keyword-form">
+  <form class="search-keyword-form" ng-submit="searchKeyword.post()">
     <div class="custom-search">
       <label class="sr-only" for="searchTextBox">Search Centennial College Program by keyword</label>
-      <input type="search" id="searchTextBox" placeholder="Enter your search" ng-model="searchKeyword.keyword">
+      <input type="search" id="searchTextBox" placeholder="Enter your search" ng-model="searchKeyword.keyword.program">
     </div>
     <button id="keywordSearchButton" class="btn btn-large" type="button">Search</button>
   </form>
