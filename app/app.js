@@ -3,6 +3,11 @@ var app = angular.module('ArticulationApp', ['ngRoute']);
 app.config([
 	'$routeProvider', function($routeProvider) {
 		$routeProvider
+		.when('/', {
+			templateUrl: '/app/components/outbound/outbound.html',
+			controller: 'outboundController',
+			controllerAs: 'outbound'
+		})
 		.when('/OutboundPathways', {
 			templateUrl: '/app/components/outbound/outbound.html',
 			controller: 'outboundController',
