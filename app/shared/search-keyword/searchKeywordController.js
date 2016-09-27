@@ -1,15 +1,15 @@
 app.controller('searchKeywordController', function($http){
   this.keyword = {};
+  this.results = [];
   
-  this.post = function() {
+  this.search = function() {
     $http({
-      method: 'POST',
-      url: 'http://articulation-dev.soulfxtech.com/api/Outbound/Search?',
-      data: $.param(this.keyword),
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+      method: 'GET',
+      url: 'http://articulation-dev.soulfxtech.com/api/Outbound/Search',
+      params: this.keyword
     })
     .success(function(data) {
-      console.log(data);
+      this.results = data;
     });
   };
 });
