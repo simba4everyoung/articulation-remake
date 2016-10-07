@@ -2,17 +2,19 @@
   <p>Please enter program keyword.</p>
   <form class="search-keyword-form" ng-submit="searchKeyword.search()">
     <div class="custom-search">
-      <label class="sr-only" for="searchTextBox">Search Centennial College Program by keyword</label>
+      <label class="sr-only" for="searchTextBox">Search Centennial College Program by Keyword</label>
       <input type="search" id="searchTextBox" placeholder="Enter your search" ng-model="searchKeyword.keyword.program">
     </div>
     <button id="keywordSearchButton" class="btn btn-large" type="button">Search</button>
   </form>
   <div id="searchResultsContainer">
     <h2>Search Results</h2>
-    <ul>  
-        <li ng-repeat="result in searchKeyword.results">
-          {{result}}
-        </li>
-    </ul>
+    <table ng-repeat="s in results" id={{s.id}}>
+      <tr>
+        <td>{{s.partnerProgram}}</td>
+        <td>{{s.partnerInstitution}}</td>
+        <td>{{s.credential}}</td>
+      </tr>
+    </table>
   </div>
 </div>

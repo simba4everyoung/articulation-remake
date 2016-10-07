@@ -1,15 +1,26 @@
-app.controller('searchKeywordController', function($http){
+app.controller('searchKeywordController', function(SearchService, $scope){
   this.keyword = {};
-  this.results = [];
-  
+  var url = SearchService.apiUrl.outbound.keyword;
+  var vm = this;
+
   this.search = function() {
-    $http({
-      method: 'GET',
-      url: 'http://articulation-dev.soulfxtech.com/api/Outbound/Search',
-      params: this.keyword
-    })
-    .success(function(data) {
-      this.results = data;
+    $scope.results = [];
+    SearchService.search(url, vm.keyword).success(function(data) {
+      data.forEach(function(item) {
+        $scope.results.push({
+          id: item.outbPathwayID,
+          partnerProgram: item.partnerProgramName || 'N/A',
+          partnerInstitution: item.institutionName || 'N/A',
+          credential: item.partnerCreds || 'N/A',
+          programLength: item.partnerProgLength || 'N/A',
+          creditsAwarded: item.creditsAward || 'N/A',
+          campus: item.partnerCampus || 'N/A',
+          location: item.province || 'N/A',
+          country: item.country || 'N/A',
+          website: item.website || 'N/A',
+          description: item.description || 'N/A'
+        });
+      });
     });
   };
 });

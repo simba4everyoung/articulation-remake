@@ -1,3 +1,5 @@
-app.controller('inboundController', function() {
-  this.title = 'Inbound Pathways';
+app.controller('inboundController', function($scope) {
+  $scope.page = {};
+
+  $scope.page.title = 'Inbound Pathways';
 });
