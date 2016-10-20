@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -6,11 +7,50 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#bfca21">
     <title>Articulation Pathways Angular Remake</title>
+    <link rel="stylesheet" href="css/centennial-styles.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body ng-app="ArticulationApp">
-    <side-nav></side-nav>
-    <div class="content" ng-view>
-    </div>
+    <div id="icon-container"></div>
+    <main class="inner pathways">
+      <div class="breadcrumbs">
+        <div class="container">
+          <ul>
+            <li>
+              <svg class="ico"><use xlink:href="#home"></svg>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <svg class="ico"><use xlink:href="#arrow-right"></svg>
+              <a href="#">Pathway</a>
+            </li>
+            <li>
+              <svg class="ico"><use xlink:href="#arrow-right"></svg>
+              School of Advancement
+
+            </li>
+          </ul>
+        </div>  <!-- .container -->
+      </div>
+      <div class="container content-container">
+        <button id="insideNavToggle" class="inside-nav-toggle">
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+
+        <aside id="sideMenu" class="inner-aside">
+          <side-nav></side-nav>
+        </aside>
+
+        <div class="content" id="content" ng-view>
+        </div>
+      </div>
+    </main>
+    
+    
   <script src="//localhost:35729/livereload.js"></script>
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>

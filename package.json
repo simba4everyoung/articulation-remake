@@ -23,6 +23,7 @@
     "grunt-cssc": "*",
     "grunt-postcss": "*",
     "grunt-sass": "*",
+    "grunt-svginjector": "^0.2.0",
     "grunt-svgstore": "*",
     "grunt-tinypng": "*",
     "grunt-uncss": "*",

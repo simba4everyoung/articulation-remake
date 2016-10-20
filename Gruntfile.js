@@ -30,15 +30,14 @@ module.exports = function(grunt) {
             },
             css: {
                 files: [
-                    'css/sass/*.scss',
-                    'css/sass/*/*.scss',
-                    'css/sass/*/*/*.scss'
+                    'sass/*.scss',
+                    'sass/*/*.scss',
+                    'sass/*/*/*.scss'
                 ],
                 tasks: ['sass', 'postcss']
             },
             js: {
                 files: [
-                    'js/main/*.js',
                     'app/*.js',
                     'app/*/*.js',
                     'app/*/*/*.js'
@@ -46,7 +45,7 @@ module.exports = function(grunt) {
                 tasks: ['jshint', 'concat:myjs'],
             },
             svg: {
-                files: ['img/svg-icons/*.svg'],
+                files: ['images/svg-icons/*.svg'],
                 tasks: ['svgstore']
             }
             
@@ -55,7 +54,6 @@ module.exports = function(grunt) {
         // Task - JSLint, JSHint
         jshint: {
             all: [
-                'js/main/*.js',
                 'app/*.js',
                 'app/*/*.js',
                 'app/*/*/*.js'
@@ -69,7 +67,7 @@ module.exports = function(grunt) {
             },
             pathways:{
                 files: {
-                    'css/styles.css': 'css/sass/styles.scss'
+                    'css/main.css': 'sass/articulation-pathways.scss'
                 }
             }
         },
@@ -88,7 +86,7 @@ module.exports = function(grunt) {
                 ]
             },
             dev: {
-                src: ['css/styles.css']                
+                src: ['css/main.css']                
             }
         },
 
@@ -96,7 +94,6 @@ module.exports = function(grunt) {
         concat: {
             myjs: {
                 src: [
-                    'js/*/*.js',
                     'app/*.js',
                     'app/*/*.js',
                     'app/*/*/*.js'
@@ -163,11 +160,21 @@ module.exports = function(grunt) {
             },
             default: {
                 files: {
-                    'img/assets.svg': ['img/svg-icons/*.svg']
+                    'images/assets.svg': ['images/svg-icons/*.svg']
                 }
             }
         },
 
+        svginjector: {
+            icons: {
+                files: {
+                    'app/plugins/icons.js' : ['images/assets.svg']
+                },
+                options: {
+                    container: '#icon-container'
+                }
+            }  
+        },
 
         // Optimize Images
         tinypng: {

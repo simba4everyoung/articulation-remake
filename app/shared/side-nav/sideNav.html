@@ -1,5 +1,8 @@
 <ul>
   <li ng-repeat="item in sideNav.items">
-    <a href="#/{{item | url}}">{{item}}</a>
+    <a href="#/{{item | url}}">
+      {{item}}
+      <svg class="ico"><use xlink:href="#arrow-right"></svg>
+    </a>
   </li>
 </ul>
