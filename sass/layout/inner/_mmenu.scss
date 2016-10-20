@@ -1,0 +1,99 @@
+.inside-flyout .mm-navbar{
+	border: 0px solid;
+	height: 60px;
+
+	.mm-title{				
+		height: auto;
+		padding-top: 20px;
+		color: #fff;	
+	}
+	.mm-btn{
+		width: 60px;
+		height: 60px;
+
+		&:before{
+			border-color: $dark-gray;
+			width: 13px;
+			height: 13px;
+			border-width: 4px;
+		}
+	}
+}
+
+.inside-flyout{
+	#mm-2 .mm-title{
+		display: none;
+	}	
+}
+
+.inside-flyout .mm-panel{
+	background-color: $eclipse !important;
+	padding: 60px 0 0 !important;
+
+	&:before{
+		display: none;
+	}	
+}
+
+.inside-flyout ul.mm-listview{
+	margin: 0 !important;
+
+	li{
+		position: relative;		
+
+		&.mm-selected a{
+			background-color: $pear !important;
+			color: $eclipse;
+		}
+	}	
+	a:not(.mm-next){
+		color: $white;
+		display: block;
+		border-bottom: 1px solid $tundora;
+		text-decoration: none;
+		padding: 19px 40px;		
+		margin-right: 0;	
+		font-weight: 500;	
+
+		&:focus, &:hover{
+			background-color: $pear;
+			color: $eclipse;
+		}
+	}
+	li:first-child a{
+		border-top: 1px solid $tundora;
+	}
+
+	a.mm-next{
+		background: transparent;
+		width: 60px;
+		border-left: 1px solid $tundora;
+
+		&:before, &:after{
+			display: none;
+		}
+		& + a{
+			padding-right: 60px;
+		}
+	}
+	.ico{
+		@include setWH(100px, 159px, .15);		
+		fill: $dove-gray;
+		@extend %vertically-center;		
+		right: 20px;
+	}
+}
+
+.inside-flyout .button-close{
+	position: absolute;
+	top: 0;
+	left: 10px;
+	width: 60px;
+	height: 60px;
+
+	.ico{
+		@include setWH(30px);		
+		fill: $dark-gray;
+		@extend %absolute-center;
+	}
+}

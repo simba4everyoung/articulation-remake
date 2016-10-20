@@ -1,0 +1,41 @@
+header.page-header .logo{
+	@extend %handhelds-only;
+	display: inline-block;
+	text-decoration: none;
+	float: left;
+
+	@include respond(screen-xxs){
+		span{
+			height: 60px;
+			background-color: $abbey;
+			display: inline-block;
+			float: left;
+			padding-top: 10px;
+		}
+	}
+
+	.ico{
+		position: relative;
+		@include setWH(100px, 33px, 1.95);
+
+		@include respond(tablet-all){
+			@include setWH(185px, 60px);				
+		}
+		@include respond(screen-xxs){
+			@include setWH(100px, 33px, 1.2);
+		}
+	}
+	img{
+		margin-top: 10px;
+		max-width: 140px;
+
+		@include respond(tablet-all){
+			margin-top: 8px;
+			max-height: 50px;
+		}
+		@include respond(screen-xxs){
+			width: 70px;
+			margin-top: 20px;
+		}
+	}
+}

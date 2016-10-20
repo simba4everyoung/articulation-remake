@@ -1,0 +1,35 @@
+.wrapper{	
+	clear: both;
+	overflow: hidden;
+
+	@include respond(tablet-all){
+		padding-top: 60px;	
+	}
+}
+
+.container{
+	width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;	
+	position: relative;
+
+	@include respond(screen-md){
+		width: 100%;
+	}
+	@include respond(tablet){
+		padding: 0 30px;		
+	}
+	@include respond(screen-xs){
+		padding: 0 15px;
+	}
+}
+
+.content-container{
+	position: relative;
+	@extend %clear;
+	margin: 50px 0 90px;
+
+	@include respond(screen-xs){
+		margin-bottom: 40px;		
+	}
+}

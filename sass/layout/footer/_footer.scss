@@ -1,0 +1,265 @@
+footer.page-footer{
+	@extend %clear;
+	background-color: $night-rider;	
+}
+
+footer.page-footer .top-section{
+	padding-top: 60px;
+	@extend %clear;	
+
+	@include respond(tablet){
+		padding: 35px 0 45px;
+	}
+	@include respond(screen-xs){
+		padding: 10px 0;
+	}
+
+	a{
+		color: $mercury;
+		font-size: em($f15);
+	}
+	ul{
+		@extend %list-inline;
+		margin: 0;
+	}
+	.container > div{
+		@include respond(tablet){			
+			float: left;
+
+			&:nth-child(n+2){
+				margin-left: (20/964*100%);
+			}
+		}
+		@include respond(screen-xs){
+			margin-left: 0 !important;
+		}
+	}
+}
+
+footer.page-footer .links{
+	@extend %clear;
+
+	@include respond(tablet){
+		width: (226/964*100%);
+	}
+	@include respond(screen-xs){
+		display: none;
+	}
+
+	section{
+		width: (270/1170*100%);
+		float: left;
+
+		@include respond(tablet){
+			width: 100%;
+		}
+
+		&:nth-child(n+2){
+			margin-left: (30/1170*100%);
+
+			@include respond(tablet){
+				margin-left: 0;
+
+				a{
+					border-top: 1px solid $tundora;
+				}
+			}
+		}
+		&:last-child ul:last-child{
+			margin-top: 50px;
+			@extend %desktop-only;
+		}
+	}
+	h3{
+		color: $pear;
+		font-weight: 600;
+		font-size: em($f16);
+		border-bottom: 1px solid $scorpion;		
+		padding-bottom: 20px;		
+		
+		a{
+			color: inherit;
+		}
+
+		@include respond(tablet){
+			font-size: em($f16);
+			margin: 0;
+			padding-bottom: 0;
+			border: 0px none;
+
+			& + ul{
+				display: none;
+			}
+			a{
+				display: block;
+				padding: 15px 0;				
+			}
+		}
+	}	
+	li{
+		display: block !important;		
+	}
+	a{
+		padding: 7px 0;				
+	}
+}
+
+footer.page-footer .meta-links{
+	@extend %handhelds-only;
+
+	@include respond(tablet){		
+		width: (226/964*100%);
+	}
+	@include respond(screen-xs){
+		width: 100%;
+	}
+
+	li{
+		display: block !important;		
+	}
+	a{
+		padding: 15px 0;		
+	}
+	li:nth-child(n+2) a{
+		border-top: 1px solid $tundora;
+	}
+}
+
+footer.page-footer .info{
+	@extend %clear;
+	margin: 50px 0 30px;
+	padding-top: 10px;
+	border-top: 1px solid $scorpion;
+
+	@include respond(tablet){
+		width: (462/964*100%);
+		padding: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+		border: 0px none;
+	}
+	@include respond(screen-xs){
+		width: 100%;
+		margin-top: 15px;
+	}
+
+	& > *{
+		display: inline-block;
+		float: left;
+
+		@include respond(tablet){
+			// display: block;
+			float: none;
+		}
+	}
+
+	h3{
+		@extend %xs-only;
+		text-transform: uppercase;		
+		color: $pear;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.logo {
+		@extend %desktop-only;		
+
+		.ico{
+			@include setWH(100px, 33px, 1.95);
+			position: relative;		
+
+			rect.background{
+				fill: $night-rider;
+			}
+		}
+	}
+	.phone, .email{
+		margin-top: 30px;
+		margin-left: (70/1170*100%);
+		padding-left: 35px;
+		position: relative;
+
+		@include respond(tablet){
+			margin-top: 0;
+			margin-left: (82/472*100%);
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		@include respond(screen-xs){
+			display: block;
+			margin-left: 0;
+		}
+
+		.ico{
+			@extend %list-inline;
+			left: 0;
+			fill: $pear;
+		}
+	}
+	.phone{
+		@include respond(screen-xs){
+			border-top: 1px solid $tundora;
+		}
+
+		.ico{
+			@include setWH(100px, 100px, .2);		
+		}
+	}
+	.email{		
+		@include respond(tablet){
+			border-top: 1px solid $tundora;
+			border-bottom: 1px solid $tundora;
+		}
+
+		.ico{
+			@include setWH(100px, 75px, .25);
+		}
+	}
+}
+
+footer.page-footer ul.social-links{
+	@extend %list-inline;	
+	float: right;
+	margin: 15px 0 0;	
+
+	@include respond(tablet){
+		float: none;
+		clear: left;
+		text-align: center;
+		margin-top: 30px;
+	}
+	@include respond(screen-xs){
+		margin-top: 15px;
+	}
+
+	li{
+		float: left;
+
+		@include respond(tablet){
+			float: none;
+		}
+	}
+	a{
+		display: block;
+		padding: 10px 4px;
+	}
+	.ico{
+		@include setWH(28px);
+		position: relative;
+		fill: $silver;
+	}
+}
+
+footer.page-footer .bottom-section{
+	background-color: $mine-shaft;
+	color: $silver;
+	padding: 26px 0;
+
+	@include respond(tablet){
+		text-align: center;
+	}
+
+	span{
+		font-size: em($f15);
+	}
+}

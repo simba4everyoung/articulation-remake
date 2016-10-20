@@ -1,0 +1,157 @@
+header.page-header{
+	@extend %clear;
+	position: relative;
+	background-color: $pear;	
+	z-index: 1500;
+
+	@include respond(tablet-all){
+		max-height: 60px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+header.page-header{	
+
+	ul{
+		margin: 0;
+		@extend %list-inline;
+	}
+}
+
+header.page-header .top-bar{
+	@extend %clear;
+	color: $tundora;
+	padding: 15px 0;	
+	background-color: inherit;
+
+	@include respond(tablet-all){
+		padding: 0;
+	}
+
+	a{
+		color: inherit;
+		font-weight: 600;
+		font-size: em($f15);
+		transition: none;
+	}
+
+	.container{
+		@include respond(tablet-all){
+			padding: 0;
+		}
+	}
+}
+
+header.page-header button.nav-toggle{			
+	display: none;
+	width: 60px;
+	height: 60px;
+	position: relative;
+	float: left;
+
+	@include respond(tablet-all){
+		display: inline-block;	
+	}
+
+	div{
+		position: absolute;
+		@extend %absolute-center;
+		width: 24px;
+		height: 18px;
+	}
+	span{
+		height: 4px;
+		width: 24px;
+		background-color: $abbey;
+		display: block;
+
+		& + span{
+			margin-top: 3px;
+		}
+	}
+}
+
+header.page-header .skip-nav{
+	@extend %desktop-only;
+	display: inline-block;
+	position: relative;
+	margin: 25px 0 0 20px;
+	padding-left: 20px;
+	max-width: 133px;
+	text-overflow: ellipsis;
+	float: left;
+
+	.ico{
+		@include setWH(10px, 9px);
+		fill: $fuscous-gray;
+		left: 0;
+		@extend %vertically-center;
+	}
+}
+
+header.page-header ul.secondary-links{
+	@extend %desktop-only;
+	display: inline-block;
+	max-width: 426px;
+	float: right;
+	margin-top: 25px;
+	text-align: right;
+
+	li{
+		margin-bottom: 10px;
+	}
+	li:nth-child(n+2){
+		margin-left: 5px;
+	}
+
+	@include respond(screen-md){
+		max-width: 370px;
+	}	
+	@include respond-max(1125px){
+		max-width: 270px;
+	}	
+}
+
+header.page-header button.search-toggle{
+	display: none;
+	float: right;
+	position: relative;
+	width: 60px;
+	height: 60px;
+	border-left: 1px solid $key-lime-pie;
+
+	@include respond(tablet-all){
+		display: inline-block;	
+	}
+
+	.ico{
+		@include setWH(30px);
+		@extend %absolute-center;
+		fill: $abbey;
+	}
+}
+
+header.page-header .bottom-bar{
+	@extend %desktop-only;
+	@extend %clear;
+	background-color: $eclipse;
+
+	.container > *{
+		display: inline-block;		
+	}	
+}
+
+
+header.page-header .config{
+	float: right;
+
+	& > *{
+		display: inline-block;
+		float: left;
+		margin-top: 15px;				
+	}
+}
+

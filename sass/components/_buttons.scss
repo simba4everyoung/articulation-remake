@@ -1,0 +1,27 @@
+.btn{
+	display: inline-block;
+	position: relative;
+	border-radius: 5px;
+	text-align: center;
+	background-color: $cerulean;
+	color: $white;
+	font-weight: 700;		
+	padding: 16px 20px;
+
+	&:focus, &:hover{
+		background-color: lighten($cerulean, 5%);
+	}
+
+	&.btn-large{
+		padding: 19px 35px;
+		font-size: em($f20);
+	}
+	&.btn-gray{
+		background-color: $dark-gray;
+		color: $eclipse;
+
+		&:focus, &:hover{
+			background-color: darken($dark-gray, 5%);
+		}
+	}
+}

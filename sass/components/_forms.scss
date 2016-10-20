@@ -1,0 +1,98 @@
+%input-txt{
+	background-color: $mercury;
+	border-radius: 5px;
+	transition: .2s ease;
+
+	&:focus{
+		background-color: darken($mercury, 2%);
+
+		& ~ .ico{
+			// fill: darken($spring-wood, 10%);
+			fill: black;
+		}
+	}
+}
+
+// Global Search in Header
+.search-cont{	
+
+	form{
+		position: relative;		
+		// @include placeholder($white);
+	}
+	input[type="search"]{
+		width: 100%;
+		background-color: $sahara;		
+		color: $white;		
+		line-height: 1.5;
+		padding: 8px 40px 8px 10px;				
+	}
+	button{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 50px;
+
+		&:last-child{
+			display: none;
+		}
+	}
+	.ico{
+		@include setWH(18px);
+		fill: $spring-wood;
+		@extend %absolute-center;
+	}
+}
+
+.custom-search{
+	position: relative;
+
+	.ico{
+		@include setWH(20px);
+		@extend %vertically-center;
+		left: 20px;
+		fill: $nobel;		
+	}	
+	input[type="search"]{
+		@extend %input-txt;
+		font-size: em($f20);
+		width: 100%;
+		padding: 17px 10px 18px 55px;
+		line-height: 1.25;
+		max-height: 60px;
+	}
+}
+
+.custom-select{	
+	position: relative;
+
+	&:after{
+		content: "";
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 40px;
+		background-color: $dark-gray;
+		pointer-events: none;
+		border-radius: 0 4px 4px 0;
+	}
+
+	select{
+		background-color: $mercury;
+		border-radius: 4px;
+		@extend %unset-select;
+		padding: 13px 20px 12px;
+		width: 100%;
+	}
+
+	.ico{
+		@include setWH(100px, 64px, .16);
+		fill: $dove-gray;
+		pointer-events: none;
+		@extend %vertically-center;
+		right: 10px;
+		z-index: 1;
+	}
+}

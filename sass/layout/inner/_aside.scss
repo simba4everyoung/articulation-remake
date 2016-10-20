@@ -1,0 +1,124 @@
+main.pathways aside.inner-aside{
+	width: (270/1170*100%);
+	float: left;
+	margin-top: 90px;
+
+	@include respond(screen-sm){
+		display: none;
+	}
+}
+
+main.pathways aside.inner-aside ul{
+	@extend %list-inline;
+	margin: 0;
+
+	li{
+		display: block;
+		position: relative;		
+	}
+
+	a{
+		display: block;
+		color: $gray;
+		border-top: 1px solid $mercury;
+		padding: 15px 30px 15px 10px;
+		line-height: 1.5;
+	}
+	li:last-child a{
+		border-bottom: 1px solid $mercury;
+	}
+
+	.ico{
+		@include setWH(100px, 159px, .1);
+		fill: $gray;
+		right: 10px;
+		@extend %vertically-center;
+		pointer-events: none;
+	}
+
+	// Level 1
+	& > li.active > a{
+		color: $eclipse;
+		font-weight: 600;
+	}
+	& > li a:focus, li:hover{
+		background-color: $mercury;
+		color: $black;
+	}
+	
+	// Level 2
+	ul{
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 100%;
+		background-color: $mercury;
+		z-index: 5;
+
+		&.open{
+			display: block;
+		}
+
+		& > li > a{
+			background-color: $mercury;
+			color: $black;
+
+			&:hover, &:focus{
+				background-color: $pear;
+			}
+		}
+	}
+}
+
+button.inside-nav-toggle{
+	display: none;
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	border-radius: 25px;
+	border: 3px solid $dark-gray;
+	top: 15px;
+	right: 30px;
+	transition: .25s ease-in-out;
+
+	@include respond(screen-sm){
+		display: block;
+	}
+	@include respond(screen-xs){
+		// top: 15px;
+		right: 15px;
+	}
+
+	&:focus, &:hover{
+		background-color: $dark-gray;
+
+		span{
+			background-color: $white;
+		}
+	}
+
+	div{
+		position: absolute;
+		width: 24px;
+		height: 7px;
+		@extend %absolute-center;
+	}
+	span{
+		height: 6px;
+		width: 6px;
+		border-radius: (7px/2);
+		display: inline-block;
+		float: left;
+		background-color: $dark-gray;
+		transition: inherit;
+
+		&:nth-child(n+2){
+			margin-left: 2px;
+		}
+	}
+}
+
+.content-container .inside-flyout{
+	display: none !important; 
+}

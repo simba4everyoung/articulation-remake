@@ -1,0 +1,108 @@
+// The purpose of this partial is to set commonly occuring styles on core HTML elements
+// Consider using components/* for custom styled elements such as buttons
+
+// ***************************************	Base Config	***************************************//
+@include set-box-sizing;
+
+@include selection(black, $pear);
+
+body{
+	font-size: $base-font-size;	
+	font-family: $open-sans;
+	color: $nero;
+	background-color: white;
+	font-weight: 400;
+	line-height: 1.1;
+
+	// Font Resizer toggle styles
+	&.medium-font{
+		font-size: 17px;
+
+		ul.secondary-links{
+			max-width: 402px !important;
+		}
+	}
+	&.large-font{
+		font-size: 18px;
+
+		ul.secondary-links{
+			max-width: 394px !important;
+		}
+	}
+
+	@include respond(screen-xs){
+		font-size: 16px;
+	}
+}
+
+// ***************************************	HTML Element Styling	***************************************//
+a{		
+	// color: $shakespeare;
+	transition: .15s ease-in;	
+
+	&:link{
+		text-decoration: none;
+	}
+	&[href]:hover{
+		text-decoration: underline;
+	}
+}
+
+h1, h2, h3, h4, h5{
+	line-height: 1.1;
+	margin: 5px 0 10px;	
+	font-weight: 600;
+	color: $eclipse;
+
+	a{
+		color: inherit;
+		text-decoration: none !important;
+		font-size: inherit;
+
+		&:hover{
+			text-decoration: underline !important;
+		}
+	}
+}
+
+h1{	
+	font-size: em($f45);	
+
+	@include respond(screen-xs){
+		font-size: em($f40);	
+	}
+}
+h2{	
+	// font-size: em(45px);
+}
+h3{	
+	// font-size: em(32px);
+}
+p{
+	margin: 10px 0px 15px;
+	line-height: 1.5;
+	transition: .15s;
+}
+
+// ***************************************	Browser/Normalize Overrides and Sets	***************************************//
+input{
+	font-family: inherit;
+	font-size: 16px;
+	font-weight: 400;
+	border: none;
+}
+
+button, input[type="submit"]{
+	position: relative;
+	display: inline-block;	
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+	border: 0px none;	
+	background-color: transparent;
+	transition: .25s ease;
+}
+
+#icon-container {
+	display: none;
+}

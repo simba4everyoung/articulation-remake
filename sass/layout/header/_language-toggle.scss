@@ -1,0 +1,33 @@
+header.page-header .select-language{
+	max-width: 180px;
+	height: 32px;
+
+	.goog-te-gadget{
+		color: transparent;
+	}	
+	select{		
+		margin: 0;		
+		background-color: $scorpion;
+		font-family: $open-sans;	
+		font-size: em($f14) !important;
+		@extend %unset-select;
+		color: $white;
+		border-radius: 4px;
+		background-color: $scorpion;
+		padding: 3px 10px;
+		height: 32px;
+		width: 100%;
+		background-image: url("../images/icon-assets/arrow-down.png");
+		background-repeat: no-repeat;
+		background-position: 95% center;
+	}
+	span{
+		display: none !important;
+	}
+}
+
+iframe.goog-te-banner-frame.skiptranslate{
+	@include respond(tablet-all){
+		display: none !important;
+	}
+}

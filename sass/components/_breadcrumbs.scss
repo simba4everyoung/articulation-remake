@@ -1,0 +1,33 @@
+.breadcrumbs{
+	@extend %clear;
+	@extend %hidden-xs;
+	background-color: $sea-shell;
+	text-transform: uppercase;
+	color: $dove-gray;
+
+	ul{
+		@extend %list-inline;
+		margin: 0;
+	}
+	li{
+		float: left;
+		font-size: em($f12);
+		padding: 13px 20px 13px 24px;
+		position: relative;
+	}
+	a{
+		font-size: inherit;
+		color: $dusty-gray;
+	}
+	.ico{
+		@extend %vertically-center;
+		left: 0;
+		fill: $nobel;
+	}
+	li:first-child .ico{
+		@include setWH(100px, 99px, .15);
+	}
+	li:nth-child(n+2) .ico{
+		@include setWH(100px, 159px, .07);	
+	}
+}

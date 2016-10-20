@@ -1,0 +1,106 @@
+// Top Level, nth-level navigation
+nav.main-nav{
+	float: left;
+}
+
+nav.main-nav > ul{	
+	z-index: 1000;
+	
+	// nth-Level
+	a{
+		color: $white;
+		padding: 21px 30px;		
+		position: relative;		
+
+		&:hover, &:focus{
+			background-color: $neroa;
+			color: $pear;
+		}
+
+		@include respond(screen-md){
+			padding: 21px 20px;
+		}		
+	}
+	ul{
+		display: none;
+		position: absolute;
+		background-color: $eclipse;
+		width: 270px;
+
+		li{
+			display: block;		
+		}	
+		a{
+			border-bottom: 1px solid $black;					
+
+			&:hover, &:focus{
+				background-color: $pear;
+				color: $cod-gray;		
+				border-bottom-color: transparent;
+
+				.ico{
+					fill: $black;
+				}
+			}
+
+			.ico{
+				@include setWH(15px);						
+				fill: $dark-gray;
+				@extend %vertically-center;
+				right: 15px;
+			}
+		}
+	}
+
+	// Top Level
+	& > li{
+		float: left;
+		position: relative;		
+	}
+	& > li:first-child a{
+		border-left: 1px solid $tundora;	
+	}
+	& > li > a{
+		border-right: 1px solid $tundora;		
+
+		.ico{
+			display: none;
+		}
+	}	
+}
+
+// 2nd Level Drop down navigation
+nav.main-nav > ul > li > ul{	
+	top: 100%;	
+	left: 0;			
+	background-color: $tundora;
+
+	& > li > a{
+		padding: 16px 35px 16px 20px;					
+	}
+}
+
+// 3rd Level Drop-down navigation
+nav.main-nav > ul > li > ul > li > ul{
+	top: 0;
+	left: 100%;
+	bottom: 0;
+	background-color: lighten($mine-shaft, 20%);
+
+	a{				
+		border-color: transparent;	
+		padding: 16px 20px;				
+	}
+}
+
+// Toggle Classes - Hover, Focus, Active
+nav.main-nav{
+	.open{
+		display: block;
+	}
+}
+
+
+header.page-header .mobile-nav{
+	display: none !important; 
+}

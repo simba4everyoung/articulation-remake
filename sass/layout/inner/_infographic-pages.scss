@@ -1,0 +1,15 @@
+main.pathways {
+  .infographic-only,
+  .map-only {
+    & + .spotlights {
+      display: none;
+    }
+  }
+
+  .infographic-only {
+    margin-top: 40px;
+    @include respond-max(767px) {
+      display: block !important;
+    }
+  }
+}

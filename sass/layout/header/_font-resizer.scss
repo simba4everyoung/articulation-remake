@@ -1,0 +1,48 @@
+header.page-header .font-resizer{
+	margin-right: 10px;
+
+	button{
+		background-color: $scorpion;
+		height: 32px;
+		width: 32px;
+		float: left;
+		position: relative;
+		color: $white;
+
+		&:first-child{
+			border-radius: 5px 0 0 5px;
+			border-right: 1px solid $eclipse;
+
+			span{
+				font-size: $f14;
+			}
+		}
+		&:nth-child(2){
+
+			span{
+				font-size: $f18;
+			}
+		}
+		&:last-child{
+			border-radius: 0 5px 5px 0;
+			border-left: 1px solid $eclipse;
+
+			span{
+				font-size: $f22;
+			}
+		}
+
+		&.active{
+			color: $pear;
+		}
+	}
+
+	span:before{
+		content: "A";
+		position: absolute;
+		bottom: 8px;
+		@extend %horizontally-center;
+		font-weight: 600;
+		line-height: .75;		
+	}
+}
