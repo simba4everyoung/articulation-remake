@@ -10,7 +10,6 @@ module.exports = function(grunt) {
                 options: {
                     port: 9000,
                     hostname: 'localhost',
-                    keepalive: 'true',
                     livereload: 'true'
                 }
             }
@@ -186,4 +185,5 @@ module.exports = function(grunt) {
     }); // grunt.initConfig()
 
     grunt.registerTask('default', []);
+    grunt.registerTask('start', ['connect', 'watch']);
 };
